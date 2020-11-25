@@ -41,18 +41,25 @@
   (conf-mode-initialize "\"")
   (modify-syntax-entry ?\; ".")
   (set (make-local-variable 'conf-space-keywords)
-       (rx (or
-            "autocmd"
-            "bind"
-            "js"
-            "jsb"
-            "quickmark"
-            "set"
-            "unbind"
-            )))
+    (rx (or
+          "autocmd"
+          "bind"
+          "js"
+          "jsb"
+          "quickmark"
+          "sanitize"
+          "bindurl"
+          "command"
+          "set"
+          "unbind"
+
+          "colors"
+          "colorscheme"
+
+          )))
   (set (make-local-variable 'parse-sexp-lookup-properties) t)
   (set (make-local-variable 'syntax-propertize-function)
-       tridactyl-syntax-propertize-function))
+    tridactyl-syntax-propertize-function))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("tridactylrc\\'" . tridactyl-mode))
